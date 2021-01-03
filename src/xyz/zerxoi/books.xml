@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+    <book isbn="987-7-111-64124-7">
+        <name>深入理解Java虚拟机 JVM高级特性与最佳实践</name>
+        <authors>
+            <author>周志明</author>
+        </authors>
+        <price>129</price>
+    </book>
+    <book isbn="987-7-111-50824-4">
+        <name>Java并发编程的艺术</name>
+        <authors>
+            <author>方腾飞</author>
+            <author>魏鹏</author>
+            <author>程晓明</author>
+        </authors>
+        <price>59</price>
+    </book>
+    <book isbn="978-7-04-040664-1">
+        <name>数据库系统概论（第5版)</name>
+        <authors>
+            <author>王珊</author>
+            <author>萨师煊</author>
+        </authors>
+        <price>39.6</price>
+    </book>
+</books>
