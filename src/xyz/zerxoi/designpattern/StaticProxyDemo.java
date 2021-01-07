@@ -2,46 +2,15 @@ package xyz.zerxoi.designpattern;
 
 public class StaticProxyDemo {
     public static void main(String[] args) {
-        new WeddingCompany(new You()).happyMarry();
+        UserDaoImpl userDaoImpl = new UserDaoImpl();
+        UserDaoProxy userDaoProxy = new UserDaoProxy(userDaoImpl);
+        userDaoProxy.save();
+
+        // 典型的静态代理
         new Thread(()->System.out.println("lambda表达式")).start();
-        // Thread对象就是lambda表达式对象的代理，二者都实现Runnable接口
+        // lambda表达式对象是目标对象，Thread对象就是lambda表达式对象的代理，二者都实现Runnable接口
         // 在Thread对象的run()方法中调用真实对象的run()方法
 
-    }
-}
-
-interface Marry {
-    void happyMarry();
-}
-
-// 真实对象
-class You implements Marry {
-    @Override
-    public void happyMarry() {
-        System.out.println("新婚快乐");
-    }
-}
-
-// 代理对象
-class WeddingCompany implements Marry {
-    private Marry target;
-    public WeddingCompany(Marry target) {
-        this.target = target;
-    }
-
-    @Override
-    public void happyMarry() {
-        before();
-        target.happyMarry();
-        after();
-    }
-
-    void before() {
-        System.out.println("婚前布置");
-    }
-
-    void after() {
-        System.out.println("婚后收尾款");
     }
 }
 

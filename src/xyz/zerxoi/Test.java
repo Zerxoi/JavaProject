@@ -1,27 +1,41 @@
 package xyz.zerxoi;
 
-import java.util.Scanner;
-
 public class Test {
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        input.nextLine();
-        String s = input.nextLine();
-        input.close();
-        System.out.println(reverseString(s, n));
+        A extendsA = new A() {};
+        System.out.println("=================");
+        B b = new B();
+        // new A() {} 实际上是 创建B类并实例化的简写
+
+        X extendsX = new X(1) {};
+        System.out.println("=================");
+        Y y = new Y(1);
+        // new X(int x) {} 是 创建Y类并实例化的简写
     }
 
-    static String reverseString(String s, int n) {
-        int len = s.length();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < len; i += n) {
-            int j = i + n - 1;
-            if (j > len - 1)
-                j = len - 1;
-            while (j >= i)
-                sb.append(s.charAt(j--));
-        }
-        return sb.toString();
+}
+
+class A {
+    public A() {
+        System.out.println("A()");
+    }
+}
+
+class B extends A {
+    public B() {
+        // super(); // 默认调用 super() 因此可以省略
+    }
+}
+
+class X {
+    public X(int x) {
+        System.out.println("X(int x)");
+    }
+}
+
+class Y extends X {
+    public Y(int x) {
+        super(x);
     }
 }
